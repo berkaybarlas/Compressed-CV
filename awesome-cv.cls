@@ -107,7 +107,7 @@
 
 %% Header & Footer
 % Set offset to each header and footer
-\fancyhfoffset{em}
+% \fancyhfoffset{em}
 % Remove head rule
 \renewcommand{\headrulewidth}{0pt}
 % Clear all header & footer fields
