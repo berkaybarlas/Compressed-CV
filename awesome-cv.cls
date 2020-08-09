@@ -89,6 +89,7 @@
   pdfsubject={},
   pdfkeywords={}
 }
+\usepackage{wrapfig}
 
 
 %-------------------------------------------------------------------------------
@@ -132,6 +133,7 @@
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
+\definecolor{darkblue}{HTML}{1565C0}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
 \colorlet{text}{darkgray}
@@ -154,7 +156,9 @@
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
-  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
+  %\ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
+  % Single color
+  \color{darkblue}#1#2#3}
 }
 
 
@@ -546,7 +550,7 @@
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \color{gray}\vhrulefill{0.7pt}
 }
 
 % Define a subsection for CV
@@ -589,7 +593,24 @@
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
 }
+\newcommand{\shiftright}[2]{\makebox[#1][r]{\makebox[0pt][l]{#2}}}
 
+% CV entry with image
+\newcommand*{\cventrywithimage}[6]{%
+  \vspace{-1mm}
+  \makebox[0pt][l]{%
+  \shiftright{-130pt}{\raisebox{-25pt}[0pt][0pt]{
+    \includegraphics[width=1in]{#6}}}}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
