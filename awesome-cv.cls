@@ -151,14 +151,14 @@
 \colorlet{awesome}{awesome-red}
 
 % Boolean value to switch section color highlighting
-\newbool{acvSectionColorHighlight}
-\setbool{acvSectionColorHighlight}{true}
+\newbool{acvSectionColorHighlights}
+\setbool{acvSectionColorHighlights}{false}
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
-  %\ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
+  \ifbool{acvSectionColorHighlights}{{\color{awesome}#1#2#3}}{#1#2#3}%
   % Single color
-  \color{darkblue}#1#2#3}
+  \color{awesome}
 }
 
 
@@ -201,15 +201,15 @@
 \newcommand*{\headersocialstyle}[1]{{\fontsize{11pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{darkblue} #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{0.5em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10pt}{0.5em} \bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\color{awesome} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
@@ -447,11 +447,11 @@
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
-      \ifthenelse{\isundefined{\@mobile}}%
+      \ifthenelse{\isundefined{\@homepage}}%
         {}%
         {%
-          \faMobile\acvHeaderIconSep\@mobile%
-          \setbool{isstart}{false}%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
         }%
       \ifthenelse{\isundefined{\@email}}%
         {}%
@@ -459,11 +459,11 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
         }%
-      \ifthenelse{\isundefined{\@homepage}}%
+      \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
+          {\faMobile\acvHeaderIconSep\@mobile}%
         }%
       \ifthenelse{\isundefined{\@github}}%
         {}%

@@ -1,6 +1,19 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
@@ -33,42 +46,41 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\makeatletter
+\patchcmd{\@sectioncolor}{\color}{\mdseries\color}{}{}
+\makeatother
+
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
-%------------------------------------------------------------------
-%%
+%-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-% \photo{berkayb.png}
-\vspace{-4mm}
+% \photo[rectangle,edge,right]{profile}
 \name{Berkay}{Barlas}
-\position{Electrical \& Electronics{\enskip\cdotp\enskip}Computer Engineering}
-\address{}
+%\position{Electrical and Electronics{\enskip\cdotp\enskip}Computer Engineering}
 %\address{Rumelifeneri Yolu 34450 Sariyer,Istanbul}
 
-\github{berkaybarlas}
+%\mobile{(90) 544 9139955}
 \email{berkay.barlas@outlook.com}
+\github{berkaybarlas}
+\linkedin{berkaybarlas}
 \homepage{berkaybarlas.com}
-\mobile{(90) 544 9139955}
-%\linkedin{berkaybarlas}
-%\hackerrank{berkayBarlas}
 % \gitlab{gitlab-id}
 % \stackoverflow{SO-id}{SO-name}
 % \twitter{@twit}
 % \skype{skype-id}
 % \reddit{reddit-id}
 % \extrainfo{extra informations}
+
 %\quote{``Be the change that you want to see in the world."}
+
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-\makebox[0pt][l]{
-    \shiftright{-50pt}{\raisebox{-20pt}[0pt][0pt]{
-    \includegraphics[height=1in]{./images/leftcorner}}}}
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\makecvheader[C]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
@@ -82,21 +94,21 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
+%\input{resume/summary.tex}
 \input{cv/education.tex}
-\vspace{-3mm}
+\input{cv/research.tex}
+\input{cv/projects.tex}
+\input{cv/skills.tex}
+\newpage
 \input{cv/experience.tex}
-\vspace{-0.5mm}
-%\input{cv/skills.tex}
-\vspace{-0.5mm}
+%\input{cv/publications.tex}
 \input{cv/extracurricular.tex}
-\vspace{-0.5mm}
-\input{cv/honors.tex}
-%\input{cv/presentation.tex}
-%\input{cv/writing.tex}
-%\input{cv/committees.tex}
 
-\makebox[0pt][l]{
-    \shiftright{470pt}{\raisebox{-60pt}[0pt][0pt]{
-    \includegraphics[width=1.2in]{./images/rightcorner}}}}
+\input{cv/honors.tex}
+%\input{resume/committees.tex}
+
+
+
+
 %-------------------------------------------------------------------------------
 \end{document}
