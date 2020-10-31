@@ -11,17 +11,14 @@
 </p>
 
 <div align="center">
-  <a href="https://barlas.xyz">
+  <a href="https://berkaybarlas.com">
     <img alt="My website" src="https://img.shields.io/badge/barlas-.xyz-blue.svg" />
   </a>
-  <a href="https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/resume.pdf">
+  <a href="https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.pdf">
     <img alt="My Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
   </a>
-  <a href="https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/cv.pdf">
+  <a href="https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-cv.pdf">
     <img alt="My CV" src="https://img.shields.io/badge/cv-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/coverletter.pdf">
-    <img alt="My Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
   </a>
 </div>
 
@@ -31,13 +28,13 @@
 
 ## Preview
 
-#### Résumé
+#### Resume
 
-You can see [PDF](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/resume.pdf)
+You can see [PDF](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.pdf)
 
 | CV | Resume |
 |:---:|:---:|
-| [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlasCV.jpg)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlas-CV.pdf)  | [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/resume-1.jpg)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlas-CV.pdf) |
+| [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlasCV.jpg)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlas-CV.pdf)  | [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.png)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.pdf) |
 
 ## Credit
 **Compressed CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv).
