@@ -34,7 +34,7 @@ You can see [PDF](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/m
 
 | CV | Resume |
 |:---:|:---:|
-| [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlasCV.jpg)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlas-CV.pdf)  | [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.png)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.pdf) |
+| [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/BerkayBarlasCV.jpg)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-cv.pdf)  | [![Résumé](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.png)](https://raw.githubusercontent.com/berkaybarlas/Compressed-CV/master/documents/berkay-barlas-resume.pdf) |
 
 ## Credit
 **Compressed CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv).
