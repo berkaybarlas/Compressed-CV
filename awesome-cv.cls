@@ -273,6 +273,10 @@
 
 % Define writer's address
 % Usage: \address{<address>}
+\newcommand*{\opencv}[1]{\def\@opencv{#1}}
+
+% Define writer's address
+% Usage: \address{<address>}
 \newcommand*{\address}[1]{\def\@address{#1}}
 
 % Define writer's position
@@ -443,6 +447,7 @@
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
+    \ifthenelse{\isundefined{\@opencv}}{\vspace{0mm}}{\vspace{2mm}}
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}%
@@ -533,6 +538,8 @@
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
   \end{minipage}
+
+\ifthenelse{\isundefined{\@opencv}}{\vspace{0mm}}{\vspace{2mm}}
 }
 
 % Define a footer for CV
@@ -580,6 +587,20 @@
   \end{center}
 }
 % Define an entry of cv information
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvopenentry}[5]{%
+  %\vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+% Define an entry of cv information for extensive information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
   \vspace{-2.0mm}
@@ -635,6 +656,17 @@
   \end{tabular*}
 }
 
+% Define an environment for opencvhonor
+\newenvironment{cvopenhonors}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 2.0cm} R{2.5cm}}
+}{
+    \end{tabular*}
+  \end{center}
+}
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
@@ -643,7 +675,7 @@
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 2.0cm} R{2.5cm}}
-}{%
+}{
     \end{tabular*}
   \end{center}
 }
