@@ -134,7 +134,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 \definecolor{darkblue}{HTML}{004d99}
-\definecolor{olddarkblue}{HTML}{1565C0}
+\definecolor{resumedarkblue}{HTML}{1565C0}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
 \colorlet{text}{darkgray}
