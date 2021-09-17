@@ -8,7 +8,7 @@
 \documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.2cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -42,7 +42,7 @@
 % \photo{berkayb.png}
 \vspace{-4mm}
 \name{Berkay}{Barlas}
-\position{Electrical \& Electronics{\enskip\cdotp\enskip}Computer Engineering}
+%\position{Computer Science Masters{\enskip\cdotp\enskip} Prospective Student}
 \address{}
 %\address{Rumelifeneri Yolu 34450 Sariyer,Istanbul}
 
@@ -62,10 +62,6 @@
 
 %-------------------------------------------------------------------------------
 \begin{document}
-
-\makebox[0pt][l]{
-    \shiftright{-60pt}{\raisebox{-20pt}[0pt][0pt]{
-    \includegraphics[height=1in]{./images/leftcorner}}}}
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
 \makecvheader
@@ -86,20 +82,18 @@
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
 \input{resume/education.tex}
-\vspace{-3mm}
+\vspace{-2mm}
 \input{resume/experience.tex}
-\vspace{-0.5mm}
 %\input{resume/skills.tex}
-\vspace{-0.5mm}
+\vspace{-2mm}
+\input{resume/projects.tex}
+\vspace{-2mm}
 \input{resume/extracurricular.tex}
-\vspace{-0.5mm}
+\vspace{-2mm}
 \input{resume/honors.tex}
 %\input{cv/presentation.tex}
 %\input{cv/writing.tex}
 %\input{cv/committees.tex}
-
-\makebox[0pt][l]{
-    \shiftright{470pt}{\raisebox{-80pt}[0pt][0pt]{
-    \includegraphics[width=1.2in]{./images/rightcorner}}}}
+\vspace{-10mm}
 %-------------------------------------------------------------------------------
 \end{document}
