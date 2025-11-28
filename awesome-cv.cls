@@ -615,7 +615,7 @@
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
-  \vspace{-1mm}
+  % \vspace{-1mm}
 }
 \newcommand*{\cvexpentry}[5]{%
   %\vspace{-2.0mm}
@@ -743,7 +743,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{-3.5mm}
 }
 
 % Define an environment for cvghostitems(for cventry)
