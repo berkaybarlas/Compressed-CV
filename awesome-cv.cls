@@ -151,12 +151,12 @@
 \colorlet{awesome}{awesome-red}
 
 % Boolean value to switch section color highlighting
-\newbool{acvSectionColorHighlights}
-\setbool{acvSectionColorHighlights}{false}
+\newbool{acvSectionColorHighlight}
+\setbool{acvSectionColorHighlight}{false}
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
-  \ifbool{acvSectionColorHighlights}{{\color{awesome}#1#2#3}}{#1#2#3}%
+  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
   % Single color
   \color{awesome}
 }
@@ -166,7 +166,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+%\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 %\newfontfamily\FA[Path=\@fontdir]{Font_Awesome5}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
@@ -391,7 +391,7 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{0.0mm}
+\newcommand{\acvSectionTopSkip}{1.0mm}
 \newcommand{\acvSectionContentTopSkip}{0.2mm}
 \newcommand{\acvSectionRemove}{-6.2mm}
 
@@ -564,7 +564,7 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-1mm}
   \subsectionstyle{#1}
   \phantomsection
 }
@@ -581,7 +581,7 @@
 
 % Define an environment for cventry
 \newenvironment{cventries}{%
-  \vspace{-1.0mm}
+  \vspace{0.0mm}
   \vspace{\acvSectionContentTopSkip}
   \begin{center}
 }{%
@@ -648,12 +648,12 @@
       \entrylocationstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
-  \vspace{-1mm}
+  \vspace{0.5mm}
 }
 % Define an entry of cv information for extensive information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  \vspace{0.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -755,20 +755,20 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  \vspace{-2.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=2ex, itemsep=1.5pt, parsep=0pt, topsep=0pt]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-3.5mm}
+  \vspace{-1.5mm}
 }
 
 % Define an environment for cvghostitems(for cventry)
 \newenvironment{cvopenitems}{%
-  \vspace{-4mm}
+  \vspace{-1mm}
   \begin{justify}
   \begin{itemize}[leftmargin=1ex]
     \setlength{\parskip}{1pt}
@@ -776,7 +776,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-5.0mm}
+  \vspace{-1mm}
 }
 
 % Define an environment for cvghostitems(for cventry)
