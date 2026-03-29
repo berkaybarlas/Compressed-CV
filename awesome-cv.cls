@@ -14,7 +14,7 @@
 % should not need to edit it.
 %
 % Class license:
-% LPPL v1.3c (http://www.latex-project.org/lppl)
+% LPPL v1.3c (http:/cvexpentry/www.latex-projeccvparagrapht.org/lppl)
 %
 
 
@@ -90,7 +90,6 @@
   pdfkeywords={}
 }
 \usepackage{wrapfig}
-
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -573,7 +572,7 @@
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-1mm}
   \paragraphstyle
 }{%
   \par
@@ -617,8 +616,29 @@
   \end{tabular*}%
   % \vspace{-1mm}
 }
+
+\newcommand*{\cvexpentrydouble}[8]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    % --- Shared Header (Company/Title & Location) ---
+    \entrytitlestyle{#2} & \entrydatestyle{#3} \\
+    
+    % --- First Position ---
+    \entrylocationstyle{#1} & \entrydatestyle{#4} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
+    
+    % --- Visual Spacing between positions (Optional: adjust 1.5ex to preference) ---
+    \multicolumn{2}{c}{} \\ [-1.5em] 
+    
+    % --- Second Position ---
+    \entrylocationstyle{#6} & \entrydatestyle{#7} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}
+  \end{tabular*}%
+  \vspace{-1mm}
+}
+
 \newcommand*{\cvexpentry}[5]{%
-  %\vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -822,4 +842,12 @@
       \\\\\\
       \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
     }
+}
+
+% Command for creating hidden keywords 
+\newcommand*{\hiddenkeywords}[1]{%
+    \begingroup
+        \fontsize{0.1pt}{0.1pt}\selectfont% Make it microscopic
+        #1% The actual text
+    \endgroup
 }
