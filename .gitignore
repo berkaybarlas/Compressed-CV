@@ -7,11 +7,11 @@
 *.fls
 *.out
 *.toc
+*.synctex.gz
 
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
-<<<<<<< HEAD
 
 ### Editor ###
 ## Vim & Emacs temp files:

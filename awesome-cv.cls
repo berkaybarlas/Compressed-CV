@@ -149,16 +149,49 @@
 \definecolor{awesome-concrete}{HTML}{95A5A6}
 \definecolor{awesome-darknight}{HTML}{131A28}
 \colorlet{awesome}{awesome-red}
+\definecolor{acvdebugsectionskip}{HTML}{FFE9B3}
+\definecolor{acvdebugsectiontitle}{HTML}{D6E6FF}
+\definecolor{acvdebugsectionrule}{HTML}{FFD7E0}
+\definecolor{acvdebugsectioncontent}{HTML}{E2F3ED}
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
 \setbool{acvSectionColorHighlight}{false}
+
+% Boolean value to switch section debug backgrounds
+\newbool{acvDebugSectionBlocks}
+\setbool{acvDebugSectionBlocks}{false}
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
   % Single color
   \color{awesome}
+}
+
+% Helpers to visualize spacing/layout when debugging a section
+\newcommand{\acvsectiondebugtrue}{\setbool{acvDebugSectionBlocks}{true}}
+\newcommand{\acvsectiondebugfalse}{\setbool{acvDebugSectionBlocks}{false}}
+\newcommand{\acvDebugVSpace}[1]{%
+  \ifbool{acvDebugSectionBlocks}{%
+    {\noindent\color{acvdebugsectionskip}\rule{\linewidth}{#1}}\par\vspace{-#1}%
+  }{}%
+  \vspace{#1}%
+}
+\newcommand{\acvDebugInline}[2]{%
+  \ifbool{acvDebugSectionBlocks}{%
+    {\begingroup\setlength{\fboxsep}{1pt}\colorbox{#1}{#2}\endgroup}%
+  }{#2}%
+}
+\newcommand{\acvDebugContentStart}{%
+  \ifbool{acvDebugSectionBlocks}{%
+    \begin{tcolorbox}[colback=acvdebugsectioncontent, boxrule=0pt, boxsep=0pt, left=0pt, right=0pt, top=0pt, bottom=0pt, arc=0pt, enlarge left by=0pt, enlarge right by=0pt]
+  }{}%
+}
+\newcommand{\acvDebugContentEnd}{%
+  \ifbool{acvDebugSectionBlocks}{%
+    \end{tcolorbox}
+  }{}%
 }
 
 
@@ -554,28 +587,31 @@
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
-  \vspace{\acvSectionTopSkip}
+  \par\vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.7pt}
+  \color{gray}\vhrulefill{0.7pt}%
+  \nopagebreak[4]%
 }
 
 % Define a subsection for CV
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
-  \vspace{\acvSectionContentTopSkip}
+  \acvDebugVSpace{\acvSectionContentTopSkip}
   \vspace{-1mm}
-  \subsectionstyle{#1}
+  \acvDebugInline{acvdebugsectiontitle}{\subsectionstyle{#1}}
   \phantomsection
 }
 
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-1mm}
+  \acvDebugVSpace{\acvSectionContentTopSkip}
+  \vspace{-3mm}
+  \acvDebugContentStart
   \paragraphstyle
 }{%
   \par
+  \acvDebugContentEnd
   \vspace{2mm}
 }
 
@@ -623,19 +659,17 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     % --- Shared Header (Company/Title & Location) ---
     \entrytitlestyle{#2} & \entrydatestyle{#3} \\
-    
     % --- First Position ---
     \entrylocationstyle{#1} & \entrydatestyle{#4} \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\
-    
-    % --- Visual Spacing between positions (Optional: adjust 1.5ex to preference) ---
-    \multicolumn{2}{c}{} \\ [-1.5em] 
-    
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+  \vspace{0.0mm}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     % --- Second Position ---
     \entrylocationstyle{#6} & \entrydatestyle{#7} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}
   \end{tabular*}%
-  \vspace{-1mm}
+  \vspace{-1.0mm}
 }
 
 \newcommand*{\cvexpentry}[5]{%
@@ -648,7 +682,7 @@
       \entrylocationstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
-  \vspace{0.5mm}
+  \vspace{-0.5mm}
 }
 % Define an entry of cv information for extensive information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
@@ -708,7 +742,8 @@
 
 % Define an environment for opencvhonor
 \newenvironment{cvopenhonors}{%
-  \vspace{\acvSectionContentTopSkip}
+  \acvDebugVSpace{\acvSectionContentTopSkip}
+  \acvDebugContentStart
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
@@ -716,6 +751,7 @@
 }{
     \end{tabular*}
   \end{center}
+  \acvDebugContentEnd
 }
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
@@ -737,8 +773,9 @@
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
-  \vspace{\acvSectionContentTopSkip}
+  \acvDebugVSpace{\acvSectionContentTopSkip}
   \vspace{-2.0mm}
+  \acvDebugContentStart
   \begin{center}
     \setlength\tabcolsep{1ex}
     \setlength{\extrarowheight}{0pt}
@@ -746,6 +783,7 @@
 }{%
     \end{tabular*}
   \end{center}
+  \acvDebugContentEnd
 }
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
@@ -755,15 +793,15 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-2.0mm}
+  \vspace{-4mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, itemsep=1.5pt, parsep=0pt, topsep=0pt]
+  \begin{itemize}[leftmargin=2ex, itemsep=0pt, parsep=0pt, topsep=0pt]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-1.5mm}
+  \vspace{0mm}
 }
 
 % Define an environment for cvghostitems(for cventry)
@@ -781,15 +819,15 @@
 
 % Define an environment for cvghostitems(for cventry)
 \newenvironment{cvghostitems}{%
-  \vspace{-4.0mm}
+  \vspace{-3.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=0.5ex]
-    \setlength{\parskip}{1pt}
+  \begin{itemize}[leftmargin=0.5ex, itemsep=0pt, parsep=0pt, topsep=0pt]
+    \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{0.0mm}
 }
 
 
