@@ -669,7 +669,7 @@
     \entrylocationstyle{#6} & \entrydatestyle{#7} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#8}}
   \end{tabular*}%
-  \vspace{-1.0mm}
+  \vspace{0.5mm}
 }
 
 \newcommand*{\cvexpentry}[5]{%
@@ -682,7 +682,7 @@
       \entrylocationstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
-  \vspace{-0.5mm}
+  \vspace{0.5mm}
 }
 % Define an entry of cv information for extensive information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
@@ -795,7 +795,7 @@
 \newenvironment{cvitems}{%
   \vspace{-4mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, itemsep=0pt, parsep=0pt, topsep=0pt]
+  \begin{itemize}[leftmargin=2ex, itemsep=0.4ex, parsep=0pt, topsep=0pt]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%

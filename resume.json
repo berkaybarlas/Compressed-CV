@@ -13,10 +13,29 @@
   "config": {
     "color": "awesome-skyblue",
     "paper": "a4paper",
-    "fontsize": "11pt",
-    "geometry": "left=1.5cm, top=.8cm, right=1.5cm, bottom=1.2cm, footskip=.5cm"
+    "fontsize": "10pt",
+    "geometry": "left=1.4cm, top=.5cm, right=1.4cm, bottom=.5cm, footskip=.3cm"
   },
   "sections": [
+    {
+      "type": "skills",
+      "title": "Technical Skills",
+      "file": "resume/skills.tex",
+      "entries": [
+        {
+          "category": "AI \\& Machine Learning",
+          "skills": "LLMs, Multi-modal Models (VLM), On-device AI, CoreML, Embeddings, Semantic Search, LLM Evaluation, Synthetic Data, PyTorch"
+        },
+        {
+          "category": "Programming Languages",
+          "skills": "Swift, Objective-C, C/C++, Python, TypeScript, Go, WebAssembly"
+        },
+        {
+          "category": "Systems \\& Infrastructure",
+          "skills": "UIKit, SwiftUI, AppKit, React, Node.js, Docker, Kubernetes, AWS"
+        }
+      ]
+    },
     {
       "type": "experience",
       "title": "Work Experience",
@@ -28,21 +47,21 @@
           "location": "Cupertino, CA",
           "positions": [
             {
-              "title": "Software Engineer @Apple Intelligence Platform",
+              "title": "Software Engineer -- Apple Intelligence \\& Safari Intelligence",
               "dates": "Sept 2025 - Present",
               "items": [
-                "Developed and maintained components for the iOS \\textbf{Apple Intelligence Platform}, designed and implemented system-level APIs.",
-                "Built \\textbf{internal tooling} to support and streamline development and evaluation on the agentic platform.",
-                "Created an \\textbf{on-device scheduler} for resource management, prioritization, and timely execution of \\textbf{LLM/multi-modal tasks}."
+                "Built an LLM evaluation framework for Safari's first intelligence features, designing evaluation metrics for model quality across \\textbf{24 locales} with synthetic data generation and prompt evaluation pipelines.",
+                "Reduced evaluation costs by \\textbf{90\\%} and cut pipeline runtimes by \\textbf{67\\%} through batching, caching, parallelization, and inference optimization.",
+                "Resolved model cold-start and latency issues for on-device LLM inference; decreased power consumption of AI-powered Tab Clustering.",
+                "Designed an on-device scheduler for prioritization and execution of LLM and multi-modal tasks on iOS."
               ]
             },
             {
               "title": "Software Engineer @Safari (iOS)",
               "dates": "\\textbf{2+ Years} | July 2023 - Sept 2025",
               "items": [
-                "Developing and optimizing Safari browser components and features on iOS using UIKit, AppKit. \\textbf{Objective-C} and \\textbf{Swift}.",
-                "Key contributor to DMA-related projects, ensuring smooth implementation and functionality across iOS system layers.",
-                "Integrated \\textbf{AI} and \\textbf{Machine Learning} frameworks to deliver intelligent features within Safari, enhancing user experience."
+                "Developed and optimized Safari browser components on iOS using UIKit, Objective-C, and Swift, serving \\textbf{1B+ users} worldwide.",
+                "Built an on-device semantic clustering pipeline using foundation embedding models and custom ranking algorithms, enabling automatic tab organization with privacy-preserving on-device inference."
               ]
             }
           ]
@@ -55,10 +74,8 @@
           "location": "Remote",
           "dates": "\\textbf{2 Years} | Mar 2020 - Jan 2022",
           "items": [
-            "Supervised and lead to Front End team to develop fast and reliable remote desktop controller application on web.",
-            "Maintained and optimized full-stack applications, leveraging \\textbf{ React, Ruby on Rails, Postgre SQL, AWS, Docker}.",
-            "Enhanced live streaming service performance \\textbf{30\\%} using WebAssembly, WebSocket, TCP/IP, UDP protocols and browser APIs.",
-            "Reduced monthly fraud cases \\textbf{80\\%} by implementing improved payment systems with fraud detection, prevention methods."
+            "Led a front-end team building a real-time remote desktop streaming app; optimized WebAssembly and WebSocket pipelines, improving performance by \\textbf{30\\%}.",
+            "Reduced monthly fraud by \\textbf{80\\%} using anomaly detection with rule-based scoring and statistical thresholds."
           ]
         },
         {
@@ -68,8 +85,8 @@
           "location": "San Francisco, CA",
           "dates": "\\textbf{3 Months} | Aug 2022 - Nov 2022",
           "items": [
-            "Developed a tool to track and identify latency changes in \\textbf{Google Cloud} products and diagnose potential bottlenecks.",
-            "Implemented a \\textbf{TypeScript} dashboard and Go back-end to aggregate billions of logs using SQL queries and visualize data."
+            "Built a latency-tracking tool for Google Cloud products, aggregating \\textbf{billions of log entries} via SQL to identify performance bottlenecks and regressions.",
+            "Implemented a TypeScript dashboard with Go back-end for real-time latency visualization across cloud services."
           ]
         },
         {
@@ -79,20 +96,7 @@
           "location": "Cupertino, CA",
           "dates": "\\textbf{3 Months} | May 2022 - Aug 2022",
           "items": [
-            "Collaborated and engineered solutions on the \\textbf{Safari} team. Solved \\textbf{Safari macOS} and \\textbf{WebKit} bugs using \\textbf{Objective-C}.",
-            "Designed, proposed and implemented new features for the upcoming major release of Safari, used by \\textbf{20\\%} of whole user base."
-          ]
-        },
-        {
-          "type": "single",
-          "title": "Open Source Contributor",
-          "company": "Mozilla / Firefox Devtools",
-          "company_url": "https://www.mozilla.org",
-          "location": "Remote",
-          "dates": "\\textbf{3 Months} | Jan 2020 - Mar 2020",
-          "items": [
-            "Identified and fixed bugs on Github and Bugzilla(Phabricator) under \\textbf{Firefox} projects, mainly on \\textbf{Firefox Devtools} and Gecko.",
-            "Reworked Firefox reader mode design with Sketch and integrated reader-specific buttons to work with browser settings."
+            "Engineered features for a major Safari release on Safari and WebKit teams, adopted by \\textbf{20\\%} of global users; resolved macOS rendering bugs using Objective-C."
           ]
         },
         {
@@ -101,48 +105,9 @@
           "company": "Zeplin.io (Y Combinator 2015 Batch)",
           "company_url": "https://zeplin.io",
           "location": "Istanbul, Turkey",
-          "dates": "\\textbf{1+} | Jun 2019 - Aug 2020",
+          "dates": "\\textbf{1+ Year} | Jun 2019 - Aug 2020",
           "items": [
-            "Designed \\textbf{React front-end and Electron} applications and developed components that are used across all applications.",
-            "Led a performance overhaul, redesigning architecture to reduce code redundancy and increasing Profile Page loading speed by approximately \\textbf{30\\%} and\\textbf{10\\%}, respectively."
-          ]
-        },
-        {
-          "type": "single",
-          "title": "Software Engineer Part-time",
-          "company": "Trendyol.com",
-          "location": "Istanbul, Turkey",
-          "dates": "\\textbf{5 Months} | Jul 2018 - Dec 2018",
-          "items": [
-            "Developed web services for seller interface of e-commerce application using \\textbf{Java Spring Boot, REST API, Kubernetes}."
-          ]
-        }
-      ]
-    },
-    {
-      "type": "education",
-      "title": "Education",
-      "file": "resume/education.tex",
-      "entries": [
-        {
-          "entry_type": "cventry",
-          "degree": "M.Sc Computer Science",
-          "institution": "Georgia Institute of Technology (GaTech)",
-          "location": "Atlanta, US",
-          "dates": "Aug 2021 - May 2023",
-          "details": [
-            "\\textbf{GPA 4.0 / 4.0} | \\textbf{Coursework:} Adv. Machine Learning Systems, Distributed Systems, Big Data Sys, and Advanced Internet Sys."
-          ]
-        },
-        {
-          "entry_type": "cvopenentry",
-          "degree": "B.S. Computer Eng. Major and Electrical\\&Electronics Eng. Double Major",
-          "institution": "Koc University",
-          "location": "Istanbul, Turkey",
-          "dates": "Oct 2015 - May 2021",
-          "details": [
-            "\\textbf{Technical University of Munich (TUM), Germany} and \\textbf{Nanyang Technological University (NTU), Singapore Exchange Student}",
-            "Received 100\\% scholarship which is given to \\textbf{top 300(\\%0.01)} among 2 million students."
+            "Developed shared React and Electron components; led a performance overhaul improving page load speed by \\textbf{30\\%}."
           ]
         }
       ]
@@ -153,7 +118,7 @@
       "file": "cv/publications.tex",
       "entries": [
         {
-          "category": "Patent Application (Filed, Pending) 2025",
+          "category": "U.S. Patent Application (Pending) 2025",
           "description": "Co-Inventor. System and method for intelligent interface organization using on-device AI \\newline in large-scale consumer software platforms (Apple Inc.)."
         }
       ]
@@ -172,95 +137,51 @@
       ]
     },
     {
+      "type": "education",
+      "title": "Education",
+      "file": "resume/education.tex",
+      "entries": [
+        {
+          "entry_type": "cventry",
+          "degree": "M.Sc Computer Science",
+          "institution": "Georgia Institute of Technology (GaTech)",
+          "location": "Atlanta, US",
+          "dates": "Aug 2021 - May 2023",
+          "details": [
+            "\\textbf{GPA 4.0 / 4.0} | \\textbf{Coursework:} Adv. Machine Learning Systems, Distributed Systems, Big Data Systems, Advanced Internet Systems."
+          ]
+        },
+        {
+          "entry_type": "cvopenentry",
+          "degree": "B.S. Computer Eng. Major and Electrical\\&Electronics Eng. Double Major",
+          "institution": "Koc University",
+          "location": "Istanbul, Turkey",
+          "dates": "Oct 2015 - May 2021",
+          "details": [
+            "\\textbf{Technical University of Munich (TUM), Germany} and \\textbf{Nanyang Technological University (NTU), Singapore Exchange Student}",
+            "Received 100\\% scholarship awarded to \\textbf{top 300 (0.01\\%)} among 2 million students."
+          ]
+        }
+      ]
+    },
+    {
       "type": "projects",
       "title": "Projects",
       "file": "resume/projects.tex",
       "page_break_before": false,
       "entries": [
         {
-          "title": "Private Social Network for Schools",
-          "subtitle": "Senior Design Project | ugrad.co",
-          "award": "Best CS Project Award, Fall21",
-          "dates": "Mar 2021 - Jun 2021",
-          "items": [
-            "Led a team of 4 people to design and publish a social network for university communities that provides total anonymity.",
-            "Programmed fast and secure back-end, and designed NoSQL database models using Node.Js, Express, MongoDB, and AWS."
-          ]
-        },
-        {
           "title": "Eye Disease Classification System",
           "subtitle": "Senior Design Project | fundeus.xyz",
           "award": "Best EE Project Award, Spring20",
           "dates": "Oct 2020 - Jan 2021",
           "items": [
-            "Implemented Machine Learning algorithms that can classify cataract, glaucoma, and diabetic retinopathy from fundus images.",
-            "Designed the overall scalable cloud architecture and prepared front-end, back-end of the project using React, Python, and AWS."
+            "Trained \\textbf{ResNet-based CNN} on \\textbf{10K+ retinal fundus images} to classify cataract, glaucoma, and diabetic retinopathy, achieving \\textbf{92\\% accuracy}.",
+            "Deployed end-to-end inference pipeline using \\textbf{Python, React, AWS} with a clinical-ready web interface for ophthalmologists."
           ]
-        }
-      ]
-    },
-    {
-      "type": "skills",
-      "title": "Skills",
-      "file": "cv/skills.tex",
-      "entries": [
-        {
-          "category": "Programming Languages",
-          "skills": "C / C++, Objective-C, Swift, TypeScript, Kotlin, WebAssembly, HTML, CSS"
-        },
-        {
-          "category": "Web \\& Application Development",
-          "skills": "UIKit, SwiftUI, AppKit,React, Node.js, GO"
-        },
-        {
-          "category": "Development Tools",
-          "skills": "Xcode, Instruments, Firefox Profiler, Safari, Firefox, and Chrome developer tools, Sketch, Keynote"
-        }
-      ]
-    },
-    {
-      "type": "extracurricular",
-      "title": "Extracurricular Activity",
-      "file": "resume/extracurricular.tex",
-      "page_break_before": false,
-      "entries": [
-        {
-          "role": "University Innovation Fellow",
-          "organization": "Stanford University Design School",
-          "location": "Stanford University",
-          "dates": "Oct. 2019 - 2021",
-          "items": [
-            "Concluded a 7-week-long design thinking and innovation course at Hasso Plattner Institute of Design (d.school).",
-            "Was \\textbf{section leader} of a \\textbf{Java teaching} program for 2 summers directed by Nick McKeown at Stanford."
-          ]
-        }
-      ]
-    },
-    {
-      "type": "honors",
-      "title": "Honors \\& Awards",
-      "file": "resume/honors.tex",
-      "entries": [
-        {
-          "award": "Pixery \\& Ciceksepeti Hackathon Best Project Award",
-          "description": "Qualified \\textbf{1st} among 30 teams",
-          "location": "",
-          "date": "2019-2020"
-        },
-        {
-          "award": "Ranked 273rd (top 0.01\\%) among 2+ million Students",
-          "description": "Turkish University Attainment Exam",
-          "location": "",
-          "date": "2015"
-        },
-        {
-          "award": "Ranked 1st (top 0.0001\\%) among 1+ million Students",
-          "description": "Turkish High School Attainment Exam",
-          "location": "",
-          "date": "2011"
         }
       ]
     }
   ],
-  "hidden_keywords": "hidden-metadata-keyword-12345"
+  "hidden_keywords": "machine learning, deep learning, LLM, large language models, NLP, computer vision, PyTorch, model evaluation, inference optimization, on-device AI, CoreML, distributed systems, data pipelines, Python, Swift, Objective-C"
 }
